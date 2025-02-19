@@ -1,6 +1,12 @@
+:root{
+  /* green #B8E887, #D1F0B1, blue #B8D0EB */
+  --background: #202124;
+  --text: #CECAE0;
+}
+
 body {
   color: white;
-  background-color: #202124;
+  background-color: var(--background);
 }
 
 ::-moz-selection {
@@ -18,18 +24,20 @@ body {
 hr {
   border-top: 3px dotted blue;
 }
+
 code {
   background-color: lightblue;
   color: black;
   text-decoration: bold;
   padding: 0.1em 0.2em;
 }
+
 pre {
   background-color: #272822;
   line-height: 1.4;
-  overflow-x: auto;
   padding: 1em;
 }
+
 blockquote {
   border-color: blue;
 }
@@ -42,26 +50,32 @@ h5,
 h6 {
   color: #ddd;
 }
+
 h1::before {
   color: var(--darkMaincolor);
   content: "# ";
 }
+
 h2::before {
   color: var(--darkMaincolor);
   content: "## ";
 }
+
 h3::before {
   color: var(--darkMaincolor);
   content: "### ";
 }
+
 h4::before {
   color: var(--darkMaincolor);
   content: "#### ";
 }
+
 h5::before {
   color: var(--darkMaincolor);
   content: "##### ";
 }
+
 h6::before {
   color: var(--darkMaincolor);
   content: "###### ";
@@ -76,6 +90,7 @@ a {
   border-bottom: 3px solid var(--darkMaincolor);
   color: inherit;
 }
+
 a:hover {
   background-color: var(--darkMaincolor);
   color: black;
@@ -84,6 +99,7 @@ a:hover {
 .site-description a {
   color: #ddd;
 }
+
 .site-description a:hover {
   color: black;
 }
@@ -91,6 +107,7 @@ a:hover {
 .tags a {
   border-bottom: 3px solid var(--darkMaincolor);
 }
+
 .tags a:hover {
   background-color: var(--darkMaincolor);
   color: black;
@@ -106,87 +123,71 @@ a:hover {
   border-color: #333;
 }
 
-.highlight {
-  background-color: #333;
-}
 .soc:hover {
   color: black;
 }
+
 .draft-label {
   color: var(--darkMaincolor);
   background-color: blue;
 }
-.highlight pre code[class=language-javaScript]::before,
-.highlight pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
-}
-.highlight pre code[class*='language-yml']::before,
-.highlight pre code[class*='language-yaml']::before {
-  content: 'yaml';
-  background: #f71e6a;
-  color: white;
-}
-.highlight pre code[class*='language-shell']::before,
-.highlight pre code[class*='language-bash']::before,
-.highlight pre code[class*='language-sh']::before {
-  content: 'shell';
-  background: green;
-  color:white
-}
-.highlight pre code[class*='language-json']::before{
-  content: 'json';
-  background: dodgerblue;
-   color: #000000 
-}
-.highlight pre code[class*='language-python']::before,
-.highlight pre code[class*='language-py']::before {
-  content: 'py';
-  background: blue;
-  color: yellow ;
-}
-.highlight pre code[class*='language-css']::before{
-  content: 'css';
-  background: cyan;
-  color: black ;
-}
-.highlight pre code[class*='language-go']::before{
-  content: 'Go';
-  background: cyan;
-  color: royalblue ;
-}
-.highlight pre code[class*='language-md']::before,
-.highlight pre code[class*='language-md']::before{
-  content: 'Markdown';
-  background: royalblue;
-  color: whitesmoke ;
-}
 
-.callout-alert {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #ff6347;
+/* --- CALLOUT --- */
+.callout a:hover {
+  color: var(--background);
 }
 
 .callout-custom {
-  color: #ffffff;
+  color: var(--text);
+  border-color: var(--text);
 }
 
-.callout-tip {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: dodgerblue;
+.callout.callout-custom a {
+  border-bottom: 3px solid var(--text);
 }
 
-.callout-warning {
-  color: #ffffff;
-  background-color: transparent;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #ffd700;
+.callout.callout-custom a:hover {
+  background-color: var(--text);
+  color: var(--background);
+}
+
+/* --- PRE CODE LANGUAGE TAG --- */
+.highlight {
+  background-color: #333;
+}
+
+.highlight pre code.language-js::before {
+  content: "js";
+}
+
+.highlight pre code.language-yaml::before {
+  content: 'yaml';
+}
+
+.highlight pre code.language-shell::before {
+  content: 'shell';
+}
+
+.highlight pre code.language-json::before{
+  content: 'json';
+}
+
+.highlight pre code.language-py::before {
+  content: 'py';
+}
+
+.highlight pre code.language-css::before{
+  content: 'css';
+}
+
+.highlight pre code.language-go::before{
+  content: 'go';
+}
+
+.highlight pre code.language-md::before{
+  content: 'markdown';
+}
+
+.highlight pre code.language-ts::before{
+  content: 'ts';
 }
