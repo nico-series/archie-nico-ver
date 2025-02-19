@@ -1,8 +1,9 @@
 /* --- GENERAL --- */
 :root{
-  /* green #B8E887, #D1F0B1, blue #B8D0EB */
---primary: #A663CC ;
---secondary: #D1F0B1;
+  /* green #B8E887, #D1F0B1, #3FC79C, blue #B8D0EB */
+--primary: #EA3F8F; /* interactable elements */
+--secondary: #179E81; /* accent color */
+--highlight: #E2DDF5;
 --text: #1C1D21;
 --lighttext: #868998;
 --alert: #F78764;
@@ -37,7 +38,7 @@ p, ul, ol {
 
 hr {
   border: 0;
-  border-top: 3px dotted var(--secondary);
+  border-top: 3px solid var(--secondary);
   margin: 1em 0;
 }
 
@@ -131,12 +132,12 @@ svg{
 
 /* --- CODE BLOCK --- */
 code {
-  background-color: #f1f1f1;
+  background-color: var(--highlight);
   padding: .1em .2em;
 }
 
 pre {
-  background-color: var(--secondary);
+  background-color: var(--highlight);
   line-height: 1.4;
   padding: 1em;
   position: relative;
@@ -230,7 +231,7 @@ h6::before { color: var(--primary); content: '###### '; }
 }
 
 .toc {
-  background-color: #ececec;
+  background-color: var(--highlight);
   border-radius: 5px;
   color: var(--text);
   flex: 0 0 auto;
@@ -299,12 +300,12 @@ time {
 }
 
 .draft-label{ 
-    color: var(--primary);
+    color: var(--lighttext);
     text-decoration: none;
     padding: 2px 4px;
     border-radius: 4px;
     margin-left: 6px;
-    background-color: #f9f2f4;
+    background-color: var(--highlight);
 }
 
 /* --- POST --- */
@@ -315,11 +316,10 @@ article .title {
 
 /* --- CALLOUT --- */
 .callout {
-  color: var(--primary);
   padding: 1em;
   border-width: 3px;
   border-style: solid;
-  border-color: var(--primary);
+  border-color: var(--secondary);
 }
 
 .callout p {
@@ -328,11 +328,11 @@ article .title {
 }
 
 .callout a {
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 3px solid var(--secondary);
 }
 
 .callout a:hover {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: white;
 }
 
@@ -386,9 +386,9 @@ article .title {
 }
 
 .highlight pre code[class*="language-"]::before {
-  background-color: var(--primary);
+  background-color: white;
   border-radius: 0 0 0.25rem 0.25rem;
-  color: white;
+  color: var(--secondary);
   font-size: 12px;
   letter-spacing: 0.025rem;
   padding: 0.1rem 0.5rem;
