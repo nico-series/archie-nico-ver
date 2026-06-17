@@ -22,7 +22,7 @@
           <nav class="nav tags">
             <ul class="tags">
               {{ range .Params.tags }}
-              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">{{ . }}</a></li>
               {{ end }}
             </ul>
           </nav>
@@ -32,7 +32,7 @@
       </div>
 
       <!-- TOC -->
-      {{ if isset .Params "toc" }}
+      {{ if and (isset .Params "toc") (.Params.toc) }}
       <div class="toc">
         <strong>Table of contents:</strong>
         {{ .TableOfContents }}

@@ -1,183 +1,201 @@
-/* --- GENERAL --- */
-:root{
---primary: #CF97EF; /* interactable elements */
---secondary: #B8E887; /* accent color */
---highlight: #3B334E;
---text: #CECAE0;
---background: #202124;
+/* Dark theme overrides */
+body {
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-dark, #202124);
 }
 
-body {
-  color: var(--text);
-  background-color: var(--background);
+::-moz-selection {
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  text-shadow: none;
 }
 
 ::-moz-selection,
 ::selection {
-  background: var(--secondary);
-  color: var(--background);
+  background: var(--color-primary-dark, #50fa7b);
+  color: #000000;
   text-shadow: none;
 }
 
-h1::before {
-  color: var(--primary);
-  content: "# ";
+hr {
+  border-block-start: 3px dotted var(--color-border-dark, #0066ff);
 }
 
-h2::before {
-  color: var(--primary);
-  content: "## ";
+code {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+  color: var(--color-text-dark, #ffffff);
 }
 
-h3::before {
-  color: var(--primary);
-  content: "### ";
+pre {
+  background-color: var(--color-background-pre-dark, #272822);
+  border-color: var(--color-border-dark, #0066ff);
 }
 
-h4::before {
-  color: var(--primary);
-  content: "#### ";
+blockquote {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-muted-dark, #dddddd);
 }
 
-h5::before {
-  color: var(--primary);
-  content: "##### ";
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-muted-dark, #dddddd);
 }
 
-h6::before {
-  color: var(--primary);
-  content: "###### ";
-}
+h1::before { color: var(--color-primary-dark, #50fa7b); }
+h2::before { color: var(--color-primary-dark, #50fa7b); }
+h3::before { color: var(--color-primary-dark, #50fa7b); }
+h4::before { color: var(--color-primary-dark, #50fa7b); }
+h5::before { color: var(--color-primary-dark, #50fa7b); }
+h6::before { color: var(--color-primary-dark, #50fa7b); }
 
 .toc {
-  background-color: var(--highlight);
-  color: white;
+  background-color: var(--color-background-toc-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
 }
 
+/* Links */
 a {
-  border-bottom: 3px solid var(--primary);
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
   color: inherit;
 }
 
-a:hover {
-  background-color: var(--primary);
-  color: var(--background);
+a:hover,
+a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
 
 .site-description a {
-  color: var(--text);
+  color: var(--color-text-muted-dark, #dddddd);
 }
 
-.site-description a:hover {
-  color: var(--background);
+.site-description a:hover,
+.site-description a:focus {
+  color: #000000;
 }
 
+/* Tags */
 .tags a {
-  border-bottom: 3px solid var(--primary);
+  border-block-end: 3px solid var(--color-primary-dark, #50fa7b);
 }
 
-.tags a:hover {
-  background-color: var(--primary);
-  color: black;
+.tags a:hover,
+.tags a:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
 }
 
 .site-title a {
+  color: var(--color-text-dark, #ffffff);
   text-decoration: none !important;
 }
 
 .header nav,
-.footer {
-  border-color: #333;
+footer {
+  border-color: var(--color-border-dark, #0066ff);
 }
 
-.soc:hover {
-  color: var(--background);
+.highlight {
+  background-color: var(--color-background-pre-dark, #272822);
+}
+
+.soc:hover,
+.soc:focus {
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
 
 .draft-label {
-  color: var(--background);
-  background-color: var(--secondary);
+  color: var(--color-text-dark, #ffffff);
+  background-color: var(--color-background-draft-dark, #0066ff);
 }
 
-/* --- CODE BLOCK --- */
-code {
-  background-color: var(--highlight);
-  color: white;
-  text-decoration: bold;
-  padding: 0.1em 0.2em;
+/* Tables in dark mode */
+table th {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+  border-color: var(--color-border-dark, #0066ff);
 }
 
-pre {
-  background-color: var(--highlight);
-  line-height: 1.4;
-  padding: 1em;
+table td {
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-dark, #ffffff);
 }
 
-pre::before,
-pre::after {
-  border-color: var(--background)
+table tr:nth-child(even) {
+  background-color: var(--color-background-code-dark, #3a3a3a);
 }
 
-/* --- CALLOUT --- */
-.callout a:hover {
-  color: var(--background);
+/* Navigation toggle in dark mode */
+.nav-toggle {
+  color: var(--color-text-dark, #ffffff);
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus {
+  background-color: var(--color-primary-dark, #50fa7b);
+  color: #000000;
+  outline-color: var(--color-primary-dark, #50fa7b);
+}
+/* Language badges inherit from main.css - no duplicates needed */
+
+/* Callouts in dark mode */
+.callout {
+  background-color: var(--color-background-pre-dark, #272822);
+  color: var(--color-text-dark, #ffffff);
+}
+
+.callout-alert {
+  color: #f8d7da;
+  background-color: #2d1b1d;
+  border-color: #842029;
+}
+
+.callout-tip {
+  color: #d1ecf1;
+  background-color: #0c2428;
+  border-color: #0f5132;
+}
+
+.callout-warning {
+  color: #fff3cd;
+  background-color: #332701;
+  border-color: #997404;
 }
 
 .callout-custom {
-  color: var(--text);
-  border-color: var(--text);
+  color: var(--color-text-dark, #ffffff);
 }
 
-.callout.callout-custom a {
-  border-bottom: 3px solid var(--text);
+/* Search in dark mode */
+.search-panel,
+.search-result-card {
+  background-color: var(--color-background-pre-dark, #272822);
+  border-color: var(--color-border-dark, #0066ff);
 }
 
-.callout.callout-custom a:hover {
-  background-color: var(--text);
-  color: var(--background);
+.search-input,
+kbd {
+  background-color: var(--color-background-code-dark, #3a3a3a);
+  border-color: var(--color-border-dark, #0066ff);
+  color: var(--color-text-dark, #ffffff);
 }
 
-/* --- PRE CODE LANGUAGE TAG --- */
-.highlight {
-  background-color: var(--highlight);
+.search-input:focus {
+  outline-color: var(--color-primary-dark, #50fa7b);
 }
 
-.highlight pre code[class*="language-"]::before {
-  background-color: var(--background);
+.search-status-error {
+  color: var(--color-error-dark, #ff7b72);
 }
 
-.highlight pre code.language-js::before {
-  content: "js";
-}
-
-.highlight pre code.language-yaml::before {
-  content: 'yaml';
-}
-
-.highlight pre code.language-shell::before {
-  content: 'shell';
-}
-
-.highlight pre code.language-json::before{
-  content: 'json';
-}
-
-.highlight pre code.language-py::before {
-  content: 'py';
-}
-
-.highlight pre code.language-css::before{
-  content: 'css';
-}
-
-.highlight pre code.language-go::before{
-  content: 'go';
-}
-
-.highlight pre code.language-md::before{
-  content: 'markdown';
-}
-
-.highlight pre code.language-ts::before{
-  content: 'ts';
+.search-tag {
+  border-color: var(--color-primary-dark, #50fa7b);
 }
